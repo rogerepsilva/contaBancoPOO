@@ -78,8 +78,12 @@ public class Conta {
         } else {
             mes = 20;
         }
-        this.setSaldo(this.getSaldo() - mes);
-        System.out.println("Pagamento de R$"+ mes + " reais, mensalidade da conta.");
+        if (this.getStatus()){
+            this.setSaldo(this.getSaldo() - mes);
+            System.out.println("Pagamento de R$"+ mes + " reais, mensalidade da conta.");
+        } else {
+            System.out.println("Impossível pagar uma conta fechada!");
+        }
         /*
          * cc pagará 12 reais
          * cp pagará 20 reais
