@@ -2,8 +2,8 @@ public class Conta {
 
     // Atributos
     public float numConta;
-    private String dono;
     protected String tipo; // CC ou CP;
+    private String dono;
     private float saldo;
     private boolean status;
 
@@ -55,6 +55,8 @@ public class Conta {
         if (this.getStatus()){
             this.setSaldo(this.getSaldo() + dindin);
             System.out.println("Depósito de R$" + dindin + " realizado com sucesso.");
+        } else {
+            System.out.println("Impossível realizar operação, conta fechada.");
         }
         /* Conta tem que estar aberto = status true */
     }
@@ -136,5 +138,4 @@ public class Conta {
     public void setStatus(boolean status){
         this.status = status;
     }
-
 }
